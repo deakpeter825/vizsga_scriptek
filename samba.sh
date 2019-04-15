@@ -16,7 +16,7 @@ sudo mkdir/srv/kozos
 sudo chmod 755 /srv/readonly
 
 cd /etc/samba
-sudo mv smb.conf smb_old.conf
+sudo mv /etc/samba/smb.conf /etc/samba/smb_old.conf
 
 touch smb.conf
 
