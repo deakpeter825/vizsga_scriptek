@@ -23,13 +23,13 @@ cp ./smb.conf /etc/samba/smb.conf
 sudo service smbd restart
 sudo service smbd status
 sudo testparm
-sudo adduser user2
+sudo adduser user2 --gecos "user2,,," --disabled-password
+echo "user2:user2jelszo" | sudo chpasswd
 
 sudo mkdir /srv/user2
 sudo chown user2 /srv/user2
 sudo chmod 700 /srv/user2
 
-
-sudo smbpasswd -a user2 hallgato #adjuk meg a jelszót: hallgato
-
-sudo service smbd restart
+# felhasználó felvétele kézzel (sudo smbpasswd -a user2, majd bekéri a jelszót)
+# sudo service smbd restart
+# teszt kliensről: smb://ipcim/user2
